@@ -29,7 +29,7 @@ const NavBar: React.FC<{
         {prevPage.label}
       </LinkButton>
     ) : (
-      "
+      ""
     )}
     {nextPage ? (
       <LinkButton href={nextPage.link} highlighted>
