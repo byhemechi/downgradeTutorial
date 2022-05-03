@@ -21,9 +21,7 @@ function TutorialApp({ Component, pageProps }: AppProps) {
     <>
       {step ? (
         <Head>
-          <title>
-            {step} {menuVisible}
-          </title>
+          <title>{step}</title>
         </Head>
       ) : (
         ""
