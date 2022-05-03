@@ -18,7 +18,3 @@ Depot download complete : "C:\Program Files (x86)\Steam\steamapps\content\app_62
 To finish the process, just copy everything from the path in the message on top of your Beat Saber install, overwriting all conflicting files.
 
 Even though there's a decent chance of things working, I'd strongly recommend deleting your **Plugins** folder and reinstalling all your mods with ModAssistant.
-
-<NavBar
-  prevPage={{ link: "/steps/3-manifest", label: "Building a download command" }}
-/>

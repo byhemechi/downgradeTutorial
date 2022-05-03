@@ -28,11 +28,3 @@ import Head from "next/head";
 Once you've run the patcher, you need to open the steam console.
 
 You can do this be either clicking the button at the top of this page or typing `steam://open/console` into a Run dialog.
-
-<NavBar
-  prevPage={{ link: "/steps/1-setup", label: "Setup" }}
-  nextPage={{
-    link: "/steps/3-manifest",
-    label: "Building a download command",
-  }}
-/>

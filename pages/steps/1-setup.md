@@ -29,11 +29,3 @@ Addr: 6b8de32d
 Wrote patch to memory.
 Press ENTER to close.
 ```
-
-<NavBar
-  prevPage={{ link: "/", label: "Intro" }}
-  nextPage={{
-    link: "/steps/2-console",
-    label: "Opening the Steam console",
-  }}
-/>

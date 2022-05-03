@@ -42,11 +42,3 @@ download_depot 620980 620981 8948172000430595334
 Once you've finished entering your command, press enter. Unfortunately, there's no progress bar, so you're just going to have to wait until it finishes to see progress.
 
 Once you see `Depot download complete`, you're ready to move on to the next step
-
-<NavBar
-  prevPage={{ link: "/steps/2-console", label: "Opening the Steam Console" }}
-  nextPage={{
-    link: "/steps/4-finish-line",
-    label: "Copying the files",
-  }}
-/>

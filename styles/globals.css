@@ -9,9 +9,10 @@ body {
 html,
 body,
 #__next {
-  height: 100%;
+  min-height: 100vh;
 }
 
 #__next {
   display: flex;
+  flex-direction: row;
 }

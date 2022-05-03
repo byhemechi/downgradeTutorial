@@ -1,6 +1,4 @@
 module.exports = {
-  // Prefer loading of ES Modules over CommonJS
-  experimental: { esmExternals: true },
   reactStrictMode: true,
   // Support MDX files as pages:
   pageExtensions: ["md", "mdx", "tsx", "ts", "jsx", "js"],
@@ -16,6 +14,8 @@ module.exports = {
           /** @type {import('@mdx-js/loader').Options} */
           options: {
             /* jsxImportSource: …, otherOptions… */
+            mdxExtensions: [".md", "mdx"],
+            mdExtensions: [],
           },
         },
       ],
