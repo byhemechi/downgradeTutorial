@@ -1,10 +1,3 @@
-import NavBar from "../../components/navbar";
-import Head from "next/head";
-
-<Head>
-  <title>Downgrade step 3 - Building a download command</title>
-</Head>
-
 # Building a download command
 
 Steam's `download_depot` command takes the format

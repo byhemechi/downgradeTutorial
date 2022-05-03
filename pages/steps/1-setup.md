@@ -1,10 +1,3 @@
-import NavBar from "../../components/navbar";
-import Head from "next/head";
-
-<Head>
-  <title>Downgrade step 3 - Getting Set Up</title>
-</Head>
-
 # Setup
 
 Until around 2019 it was possible to downgrade games straight from Steam.

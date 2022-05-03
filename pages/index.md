@@ -1,6 +1,3 @@
-import NavBar from "../components/navbar";
-import Head from "next/head";
-
 # Intro
 
 This guide will instruct you on how to downgrade beat saber to a specific version. Please don't skip any steps, things _will_ be broken.

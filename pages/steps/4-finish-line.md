@@ -1,10 +1,3 @@
-import NavBar from "../../components/navbar";
-import Head from "next/head";
-
-<Head>
-  <title>Downgrade step 4 - Copying things over</title>
-</Head>
-
 # Copying the files
 
 You've successfully downloaded the older version, now it's time to actually make the changes.
