@@ -29,7 +29,7 @@ function TutorialApp({ Component, pageProps }: AppProps) {
       )}
       <header
         className={`fixed transition-all transform-gpu ${
-          menuVisible ? "translate-y-14" : ""
+          menuVisible ? "translate-y-4 lg:translate-y-14" : ""
         } w-full z-20 top-0`}
       >
         <div className="w-full max-w-screen-lg mx-auto px-2 flex">
@@ -59,7 +59,7 @@ function TutorialApp({ Component, pageProps }: AppProps) {
               onClick={() => setMenu(false)}
               className={[
                 "bg-transparent hover:bg-black/5 dark:hover:bg-white/5 p-4 flex items-center gap-1 font-bold",
-                "rounded-full",
+                "rounded-full  transition-opacity",
                 menuVisible ? "" : "opacity-0 pointer-events-none",
               ].join(" ")}
             >
