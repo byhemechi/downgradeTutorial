@@ -27,16 +27,22 @@ function TutorialApp({ Component, pageProps }: AppProps) {
       ) : (
         ""
       )}
-      <header className={`fixed top-0 w-full ${styles.glass}  z-10`}>
-        <div className="w-full max-w-screen-lg mx-auto px-2">
+      <header
+        className={`fixed transition-all transform-gpu ${
+          menuVisible ? "translate-y-14" : ""
+        } w-full z-20 top-0`}
+      >
+        <div className="w-full max-w-screen-lg mx-auto px-2 flex">
           <button
-            className="bg-transparent hover:bg-black/5 px-6 py-4 flex items-center gap-1 font-bold"
+            className="bg-transparent hover:bg-black/5  dark:hover:bg-white/5 px-6 py-4 flex items-center gap-1 font-bold"
             onClick={() => setMenu(!menuVisible)}
           >
             <div>{step}</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className={`h-5 w-5 transform-gpu transition-transform ${
+                menuVisible ? "-rotate-180" : ""
+              }`}
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -47,19 +53,46 @@ function TutorialApp({ Component, pageProps }: AppProps) {
               />
             </svg>
           </button>
+          <div className="flex-1" />
+          <div>
+            <button
+              onClick={() => setMenu(false)}
+              className={[
+                "bg-transparent hover:bg-black/5 dark:hover:bg-white/5 p-4 flex items-center gap-1 font-bold",
+                "rounded-full",
+                menuVisible ? "" : "opacity-0 pointer-events-none",
+              ].join(" ")}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
       <div
         className={[
-          menuVisible ? "" : "opacity-0 pointer-events-none",
-          `fixed top-0 left-0 w-full h-full z-20 ${styles.glass}`,
-          `transition-opacity`,
+          `fixed top-0 left-0 w-full ${
+            menuVisible ? "h-screen" : "h-14"
+          } overflow-hidden z-10 ${styles.glass}`,
+          `transition-all`,
         ].join(" ")}
         aria-hidden={!menuVisible}
       >
         <div
-          className={`mx-auto p-8 py-16 lg:py-32 max-w-screen-lg text-4xl transform-gpu ${
-            !menuVisible ? "-translate-y-16" : "translate-y-0"
+          className={`mx-auto p-8 py-24 lg:py-48 max-w-screen-lg text-4xl transform-gpu transition-all ${
+            !menuVisible ? "-translate-y-16 opacity-0" : "translate-y-0"
           }`}
         >
           <ol>
