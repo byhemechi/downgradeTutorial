@@ -14,5 +14,5 @@ body,
 
 #__next {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }

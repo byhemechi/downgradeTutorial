@@ -5,13 +5,28 @@ import steps from "../steps";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../components/navbar";
 
 function TutorialApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
   const [menuVisible, setMenu] = React.useState(false);
   const step = steps.get(pathname);
+
+  const scrollMonitor = React.useRef<HTMLDivElement>(null);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([detector]) => {
+      setScrolled(!detector.isIntersecting);
+    }, {});
+
+    if (scrollMonitor.current) observer.observe(scrollMonitor.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, [scrolled]);
+
   const prevStep = [...steps.entries()][
     [...steps.keys()].indexOf(pathname) - 1
   ];
@@ -27,14 +42,18 @@ function TutorialApp({ Component, pageProps }: AppProps) {
       ) : (
         ""
       )}
+      <div ref={scrollMonitor} className="mt-12 h-px -mb-px" />
       <header
-        className={`fixed transition-all transform-gpu ${
-          menuVisible ? "translate-y-4 lg:translate-y-14" : ""
+        className={`sticky transition-all ${
+          menuVisible ? "top-4 lg:top-12" : scrolled ? "shadow-md" : ""
         } w-full z-20 top-0`}
       >
         <div className="w-full max-w-screen-lg mx-auto px-2 flex">
           <button
-            className="bg-transparent hover:bg-black/5  dark:hover:bg-white/5 px-6 py-4 flex items-center gap-1 font-bold"
+            className={[
+              "bg-transparent",
+              "px-6 py-4 flex items-center gap-1 font-bold",
+            ].join(" ")}
             onClick={() => setMenu(!menuVisible)}
           >
             <div>{step}</div>
@@ -85,14 +104,14 @@ function TutorialApp({ Component, pageProps }: AppProps) {
         className={[
           `fixed top-0 left-0 w-full ${
             menuVisible ? "h-screen" : "h-14"
-          } overflow-hidden z-10 ${styles.glass}`,
+          } z-10 ${styles.glass}`,
           `transition-all`,
         ].join(" ")}
         aria-hidden={!menuVisible}
       >
         <div
           className={`mx-auto p-8 py-24 lg:py-48 max-w-screen-lg text-4xl transform-gpu transition-all ${
-            !menuVisible ? "-translate-y-16 opacity-0" : "translate-y-0"
+            !menuVisible ? "-translate-y-20 opacity-0" : "translate-y-0"
           }`}
         >
           <ol>

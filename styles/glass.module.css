@@ -1,5 +1,5 @@
 .glass {
-  @apply bg-white/90 dark:bg-gray-900/90;
+  @apply bg-white dark:bg-gray-900;
 }
 
 @supports (backdrop-filter: blur(20px)) {
