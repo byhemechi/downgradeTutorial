@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import styles from "../styles/glass.module.css";
 import type { AppProps } from "next/app";
 import steps from "../steps";
 import { useRouter } from "next/router";
@@ -26,7 +27,7 @@ function TutorialApp({ Component, pageProps }: AppProps) {
       ) : (
         ""
       )}
-      <header className="fixed top-0 bg-white/50 dark:bg-gray-900/30 backdrop-blur-xl z-10 w-full shadow">
+      <header className={`fixed top-0 w-full ${styles.glass}  z-10`}>
         <div className="w-full max-w-screen-lg mx-auto px-2">
           <button
             className="bg-transparent hover:bg-black/5 px-6 py-4 flex items-center gap-1 font-bold"
@@ -51,7 +52,7 @@ function TutorialApp({ Component, pageProps }: AppProps) {
       <div
         className={[
           menuVisible ? "" : "opacity-0 pointer-events-none",
-          "fixed top-0 left-0 w-full h-full z-20 bg-white/50 backdrop-blur-xl",
+          `fixed top-0 left-0 w-full h-full z-20 ${styles.glass}`,
           `transition-opacity`,
         ].join(" ")}
         aria-hidden={!menuVisible}
@@ -70,7 +71,9 @@ function TutorialApp({ Component, pageProps }: AppProps) {
                       n < [...steps.keys()].indexOf(pathname)
                         ? "opacity-50"
                         : "",
-                      path == pathname ? "text-blue-600" : "text-gray-800",
+                      path == pathname
+                        ? "text-blue-600 dark:text-blue-500"
+                        : "text-gray-800 dark:text-gray-200",
                       "transition-all",
                     ].join(" ")}
                     onClick={() => setMenu(false)}
