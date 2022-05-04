@@ -103,7 +103,7 @@ function TutorialApp({ Component, pageProps }: AppProps) {
       <div
         className={[
           `fixed top-0 left-0 w-full ${
-            menuVisible ? "h-screen" : "h-14"
+            menuVisible ? "h-screen" : "h-14 pointer-events-none"
           } z-10 ${styles.glass}`,
           `transition-all`,
         ].join(" ")}
