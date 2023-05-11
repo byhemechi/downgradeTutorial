@@ -1,5 +1,7 @@
 # Setup
 
+# This step is no longer required, you can skip it
+
 Until around 2019 it was possible to downgrade games straight from Steam.
 
 Unfortunately, due to pressure from developers and (mainly) publishers, the client's been updated to block usage of the `download_depot` command.
